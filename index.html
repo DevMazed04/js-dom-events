@@ -11,6 +11,28 @@
 
 <body>
     <h1>Welcome to DOM Special Events</h1>
+    <button onclick="console.log('Welcome!!!')">welcome button</button>
+    <button onclick="document.body.style.backgroundColor='red'">red button</button>
+    <button onclick="showBlue()">blue button</button>
+    <button onclick="showGreen()">green button</button>
+    <button id="show-yellow">yellow button</button>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function showBlue() {
+            document.body.style.backgroundColor = 'blue';
+            //  console.log("button worked! this is now blue!!!");
+        }
+    </script>
     <script src="js/events.js"></script>
 </body>
 
