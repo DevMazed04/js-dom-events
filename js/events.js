@@ -1,9 +1,9 @@
 console.log("welcome!!! js dom events");
 
+//we will use this
 function showGreen() {
     document.body.style.backgroundColor = 'green';
 }
-
 
 
 /* ---------------------- option-3: direct whole fuction ---------------------- */
@@ -30,3 +30,22 @@ function myFunction() {
     // document.body.style.color = "brown";
     document.body.style.backgroundColor = "yellow";
 }
+
+/* ----------- option-5 using addEventListener ----------- */
+const pinkButton = document.getElementById('show-pink');
+
+/* pinkButton.addEventListener('click', pinkBackground);
+function pinkBackground() {
+    document.body.style.backgroundColor = 'pink';
+} */
+
+pinkButton.addEventListener('click', function pinkBackground() {
+    document.body.style.backgroundColor = 'pink';
+})
+
+/* ----- option-6 using addEventListener directly without variable ----- */
+// we will use this:
+document.getElementById('show-goldenrod').addEventListener('click', function goldenrodBackground() {
+    document.body.style.backgroundColor = 'goldenrod';
+});
+
