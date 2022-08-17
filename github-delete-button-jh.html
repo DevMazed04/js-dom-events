@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github Delete Button JM</title>
+</head>
+
+<body>
+    <h1>Github Style Delete Button</h1>
+    <p id="secret-info">My Secret Information</p>
+    <input type="text" placeholder="Please type delete" id="top-secret" />
+    <button id="del-btn" disabled>Delete</button>
+
+    <script>
+        document
+            .getElementById("top-secret")
+            .addEventListener("keyup", function () {
+                //nicher moto korle function er parameter hisebe "event" dite hobe
+                // const text = event.target.value;
+                // console.log(text);
+
+                const inputField = document.getElementById("top-secret");
+                const inputText = inputField.value;
+                const delBtn = document.getElementById("del-btn");
+
+                if (inputText === "delete") {
+                    delBtn.disabled = false;
+                } else {
+                    delBtn.disabled = true;
+                }
+            });
+
+        document.getElementById("del-btn").addEventListener("click", function () {
+            const inputField = document.getElementById("top-secret");
+            const confirmMssg = confirm("are you sure to delete?");
+            if (confirmMssg) {
+                const secretInfo = document.getElementById("secret-info");
+                // secretInfo.innerText = null;
+                // secretInfo.innerText = '';
+                secretInfo.style.display = 'none';
+                inputField.value = null;
+                inputField.removeAttribute('placeholder');
+
+            } else {
+                inputField.value = null;
+            }
+        });
+    </script>
+</body>
+
+</html>
